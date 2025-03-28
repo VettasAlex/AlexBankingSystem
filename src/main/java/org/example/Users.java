@@ -14,8 +14,9 @@ public class Users {
             fileWriter.close();  // Always close the file after writing
             System.out.println("User credentials saved successfully!");
 
+            // prevents input/output exception
         } catch (IOException e) {
-            System.out.println("An error occurred while saving the user.");
+            System.out.println("An I/O exception detected.");
             e.printStackTrace();
         }
     }
