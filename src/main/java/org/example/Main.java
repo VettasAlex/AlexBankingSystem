@@ -1,35 +1,21 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
+        ArrayList<BankAccount> accounts = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        CreateAccount loginSystem = new CreateAccount();  // Create an instance of LoginSystem
 
-        //Create a normal account & a savings account
+        // Register with CreateAccount
+        BankAccount newAccount = loginSystem.createAccount(scanner);
 
-        Account account1 = new Account();
-        account1.setAccountNumber("12345678");
-
-
-        SavingsAccount account2 = new SavingsAccount();
-        account2.setAccountNumber("87654321");
+        if (newAccount != null) {
+            accounts.add(newAccount);
+        }
 
 
-
-        //TESTERS
-
-        System.out.println(account1.getAccountNumber() + " " + account2.getAccountNumber());
-
-        account1.deposit(1000);
-        account2.deposit(1900);
-
-        account1.withdraw(1499);
-        account2.withdraw(1900);
     }
 }
-
-
-
-
-
-
-
-

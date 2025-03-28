@@ -1,7 +1,10 @@
 package org.example;
 
-class SavingsAccount extends Account {
+class SavingsAccount extends BankAccount {
 
+    public SavingsAccount(String accountHolderName, int accountNumber, String password) {
+        super(accountHolderName, accountNumber, password);
+    }
 
     public void deposit(double amount) {
         if (amount > 0) {

@@ -2,16 +2,24 @@ package org.example;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class BankAccount {
+public class BankAccount extends CreateAccount {
     private String accountHolderName;
-    private String accountNumber;
+    private int accountNumber;
+    private String password;
     protected double balance = 0;
 
-    //TIMESTAMP
-    public static String getTimestamp() {
-        LocalDateTime now = LocalDateTime.now();  // Current date & time
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        return now.format(formatter);  // Format the timestamp
+    public BankAccount(String accountHolderName, int accountNumber, String password){
+        setAccountHolderName(accountHolderName);
+        setPassword(password);
+        this.accountNumber = accountNumber;
+    }
+
+    public void setPassword(String password){
+        if(password.length()>=6){
+            this.password = password;
+        } else {
+            System.out.println("Password must be longer");
+        }
     }
 
     public void setAccountHolderName(String accountHolderName) {
@@ -28,17 +36,15 @@ public class BankAccount {
         return accountHolderName;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        if (accountNumber.matches("\\d{8}")) { // Fast way for setting min-max digits
-            this.accountNumber = accountNumber;
-        } else {
-            System.out.println("Invalid account number! Must be exactly 8 digits.");
-        }
-    }
-
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
+    //TIMESTAMP
+    public static String getTimestamp() {
+        LocalDateTime now = LocalDateTime.now();  // Current date & time
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return now.format(formatter);  // Format the timestamp
+    }
 
 }

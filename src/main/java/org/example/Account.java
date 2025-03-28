@@ -1,6 +1,9 @@
 package org.example;
 
 class Account extends BankAccount {
+    public Account(String accountHolderName, int accountNumber, String password) {
+        super(accountHolderName, accountNumber, password);
+    }
 
     public double getBalance() {
         return balance;
