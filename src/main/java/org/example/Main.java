@@ -7,15 +7,14 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<BankAccount> accounts = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        CreateAccount loginSystem = new CreateAccount();  // Create an instance of LoginSystem
+        CreateAccount createAccount = new CreateAccount();  //
 
         // Register with CreateAccount
-        BankAccount newAccount = loginSystem.createAccount(scanner);
+        BankAccount newAccount = createAccount.createAccount(scanner);
 
         if (newAccount != null) {
             accounts.add(newAccount);
         }
-
 
     }
 }

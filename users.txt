@@ -1,1 +1,2 @@
-Pepe Frrrrr | 30406320 | 131313
+Normal Account|AccountType Exp | 45100017 | 111111
+Savings Account | AccountType EXP two | 83107206 | 222222
