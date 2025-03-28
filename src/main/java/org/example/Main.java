@@ -12,11 +12,17 @@ public class Main {
         SavingsAccount account2 = new SavingsAccount();
         account2.setAccountNumber("87654321");
 
+
+
+        //TESTERS
+
         System.out.println(account1.getAccountNumber() + " " + account2.getAccountNumber());
 
         account1.deposit(1000);
         account2.deposit(1900);
+
         account1.withdraw(1499);
+        account2.withdraw(1900);
     }
 }
 

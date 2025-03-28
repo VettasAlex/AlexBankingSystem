@@ -12,11 +12,11 @@ class SavingsAccount extends Account {
         }
     }
     public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount > 0 && balance - amount >= 100) {
             balance -= amount;
-            System.out.println("Withdrawal of $" + amount + " successful. Remaining balance: $" + balance + " Logged at: " + getTimestamp());
-        } else if (amount > balance) {
-            System.out.println("Bitch u broke af, ask less!");
+            System.out.println("Withdrawal of $" + amount + " successful. Remaining balance: $" + balance + "\nLogged at: " + getTimestamp());
+        } else if (balance - amount < 100) {
+            System.out.println("You need to have at least $100 in your savings account. Try a different account or a different amount");
         } else {
             System.out.println("Request not valid, please try again!");
         }
