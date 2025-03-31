@@ -2,7 +2,7 @@ package org.example;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class BankAccount extends CreateAccount {
+public class BankAccount  {
     private String accountHolderName;
     private int accountNumber;
     private String password;
